@@ -1,0 +1,460 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    font-family: "League Spartan", sans-serif;
+}
+
+.body {
+    height: 400vh;
+
+    background: url("./images/svg/bg.svg")no-repeat center center;
+}
+
+#firstpage {
+    height: 100vh;
+    padding: 0px 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#firstpage nav {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: 1.s ease-in-out;
+    z-index: 99999;
+}
+
+#firstpage #hidden_one {
+    display: none;
+}
+
+.sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+#firstpage nav #navi {
+    position: relative;
+    height: 112px;
+    width: 40%;
+    align-self: center;
+    box-sizing: border-box;
+    display: flex;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#firstpage nav #navi ul {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#firstpage nav #navi ul a {
+    position: relative;
+    width: 20%;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: beige;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px 0px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: 1.s ease-in-out;
+}
+
+#firstpage nav #navi ul a:hover {
+    color: white;
+    font-weight: 600;
+
+}
+
+#firstpage nav #navi ul .active {
+    color: #F44336;
+}
+
+#firstpage nav #navi #hover {
+    position: absolute;
+    left: 5.5%;
+    height: 112px;
+    width: 18%;
+    background: url("./images/svg/hover.svg") center no-repeat;
+    background-size: contain;
+    opacity: .2;
+    transition: .5s ease-in-out;
+}
+
+#firstpage nav #navi #active {
+    position: absolute;
+    height: 112px;
+    background: url("./images/svg/hover.svg") center no-repeat;
+    background-size: contain;
+    width: 18%;
+    left: 4%;
+    transition: .5s ease-in-out;
+}
+
+#firstpage #firstpage_content #name_role #name {
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3.04px;
+    -webkit-text-stroke: 1.5px white;
+    margin-bottom: 16px;
+}
+
+#firstpage #firstpage_content #name_role #name span {
+    letter-spacing: 7.60px;
+    -webkit-text-stroke-color: #FBE8D3;
+}
+
+#firstpage #firstpage_content #name_role #role {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+#firstpage #firstpage_content #socials {
+    display: flex;
+
+}
+
+#firstpage #firstpage_content #socials .icons {
+    width: 36px;
+    height: 36px;
+    margin-right: 18px;
+}
+
+#firstpage #scroll {
+    display: flex;
+    margin-bottom: 45px;
+    align-items: center;
+    animation: bounce 2s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+#firstpage #scroll img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+#firstpage #scroll span {
+    color: #928A97;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 64px;
+}
+
+@keyframes bounce {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, -100px, 0);
+    }
+}
+
+
+#secondpage {
+    height: 100vh;
+    padding: 32px 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page_content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#secondpage #secondpage_content #image_container {
+    position: relative;
+    width: 40%;
+    height: 688px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+#secondpage #secondpage_content #image_container img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 152px;
+    height: 192px;
+}
+
+#secondpage #secondpage_content #image_container #image {
+    height: 640px;
+    margin-left: 50px;
+    margin-top: 35px;
+    filter: grayscale(3);
+    background: url("./images/jpg/profileImage.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#secondpage #secondpage_content #text_content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 56px 56px;
+}
+
+.page_content #text_content h3 {
+    color: #F44336;
+    font-size: 32px;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin: 0px;
+    padding: 0px;
+}
+
+.page_content #text_content p {
+    width: 617px;
+    color: #000C24;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 40.80px;
+    word-spacing: 5.28px;
+    word-wrap: break-word;
+    margin: 32px 0px;
+    padding: 0px;
+}
+
+button {
+    position: relative;
+    width: 170px;
+    height: 53px;
+    background-color: #000C24;
+    border-radius: 8px;
+    border: 3px solid #000C24;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 16px 0px;
+    color: bisque;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.20px;
+}
+
+.star {
+    background: url("./images/svg/magic-star.svg");
+    background-size: cover;
+}
+
+.star-1 {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s ease;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #000C24;
+    box-shadow: 0 0 25px #fec1958c;
+}
+
+button:hover .star-1 {
+    position: absolute;
+    top: -80%;
+    left: -30%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+button:hover .star-2 {
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+button:hover .star-3 {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+button:hover .star-4 {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+button:hover .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 115%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+button:hover .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+}
+
+.fil0 {
+    fill: #000C24;
+}
+
+#thirdpage {
+    height: 100vh;
+    padding: 32px 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+#thirdpage #thirdpage_content #image_container {
+    position: relative;
+    width: 40%;
+    height: 688px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+#thirdpage #thirdpage_content #image_container img {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 152px;
+    height: 192px;
+}
+
+#thirdpage #thirdpage_content #image_container #image {
+    height: 640px;
+    margin-right: 50px;
+    margin-top: 35px;
+    filter: grayscale(3);
+    background: url("./images/png/skill.png") no-repeat center center;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+#thirdpage #thirdpage_content #text_content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 56px 56px;
+}
+
+#thirdpage #thirdpage_content #text_content #skill_container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#thirdpage #thirdpage_content #text_content #skill_container .skill {
+
+    width: 100px;
+    height: 100px;
+    background-color: cornflowerblue;
+    background: url("./images/png/skill.png") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    margin: 10px 10px;
+}
