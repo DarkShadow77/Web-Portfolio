@@ -1,12 +1,64 @@
+interface Skill {
+    skill: string;
+    percent: number;
+    offset: number;
+    width: number;
+}
+
 var navbar = document.getElementById("navbar") as HTMLElement;
 let navContainer = document.querySelector(`#firstpage nav #navi`) as HTMLDivElement;
 let navTab = document.querySelector(`#firstpage nav #navi ul a`) as HTMLAnchorElement;
 var hiddenNavbar = document.getElementById("hidden_one") as HTMLElement;
 let hoverNavBg = document.getElementById("hover") as HTMLSpanElement;
 let activeNavBg = document.getElementById("active") as HTMLSpanElement;
+var skillContainer = document.getElementById("skill_container") as HTMLElement;
 
 let navBarHoverIndex: number = 1;
+let skillArray:Skill[] = [
+    {skill: "HTML", percent: 65, offset: 105, width:10},
+    {skill: "HTML", percent: 30, offset: 210, width: 5},
+    {skill: "HTML", percent: 80, offset: 30, width:2},
+]
 
+window.addEventListener("load", () => {
+    for (let x = 0; x < skillArray.length; x++) {
+        skillContainer.innerHTML += `
+            <div class="skill">
+              <div class="outer">
+                <div class="inner">
+                  <div id="number">${skillArray[x].percent}%</div>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100px" height="100px">
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#000C24;" />
+                    <stop offset="100%" stop-color="#928A97" />
+                  </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="45" stroke-linecap="round" />
+              </svg>
+              <span class="skillText">${skillArray[x].skill}</span>
+            </div>
+            `;
+            
+        let loading = document.getElementsByTagName(`circle`) as HTMLCollectionOf<SVGCircleElement>;
+        const keyFrames = document.createElement("style");
+
+        keyFrames.innerHTML = `
+            @keyframes anim {
+                100% {
+                    stroke-dashoffset: ${skillArray[x].offset};
+                }
+            }
+
+            circle {
+                animation: anim 2s linear forwards;
+            }
+        `;
+        loading[x].appendChild(keyFrames);
+    }
+})
 
 window.addEventListener("scroll", () => {
     if (document.documentElement.scrollTop > 50) {
