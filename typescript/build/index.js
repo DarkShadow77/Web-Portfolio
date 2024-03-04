@@ -29,7 +29,7 @@ window.addEventListener("scroll", () => {
 });
 function onHover(index) {
     if (index == 1) {
-        hoverNavBg.style.left = "5.5%";
+        hoverNavBg.style.left = "4%";
     }
     else if (index == 2) {
         hoverNavBg.style.left = "23.5%";
@@ -43,9 +43,10 @@ function onHover(index) {
     else if (index == 5) {
         hoverNavBg.style.left = "80.5%";
     }
-    let hoverTab = document.querySelector(`#firstpage nav #navi ul :nth-child(${index}) :hover`);
+    let hoverTab = document.querySelector(`#firstpage nav #navi ul :nth-child(${index})`);
     console.log(`${index} ${navBarHoverIndex}`);
     if (navBarHoverIndex == index) {
+        console.log("Chee");
         hoverTab.style.color = "red";
     }
 }
@@ -69,28 +70,29 @@ function onHoverOut(mouseHoverNumber) {
 function onNavBarClick(index) {
     for (let x = 1; x <= 5; x++) {
         let ss = document.querySelector(`#firstpage nav #navi ul :nth-child(${x})`);
+        ss.style.color = "beige";
         ss.classList.remove("active");
     }
     let selectedTab = document.querySelector(`#firstpage nav #navi ul :nth-child(${index})`);
     navBarHoverIndex = index;
     if (index == 1) {
         activeNavBg.style.left = "4%";
-        selectedTab.classList.add("active");
+        selectedTab.style.color = "#F44336";
     }
     else if (index == 2) {
         activeNavBg.style.left = "23.5%";
-        selectedTab.classList.add("active");
+        selectedTab.style.color = "#F44336";
     }
     else if (index == 3) {
         activeNavBg.style.left = "42.5%";
-        selectedTab.classList.add("active");
+        selectedTab.style.color = "#F44336";
     }
     else if (index == 4) {
         activeNavBg.style.left = "61.5%";
-        selectedTab.classList.add("active");
+        selectedTab.style.color = "#F44336";
     }
     else if (index == 5) {
         activeNavBg.style.left = "80.5%";
-        selectedTab.classList.add("active");
+        selectedTab.style.color = "#F44336";
     }
 }
