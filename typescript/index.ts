@@ -2,22 +2,36 @@ interface Skill {
     skill: string;
     percent: number;
     offset: number;
-    width: number;
 }
 
-var navbar = document.getElementById("navbar") as HTMLElement;
+interface Works {
+    name: string;
+    description: string;
+    githubLink: string;
+    skills: { name: string }[];
+}
+
+let navbar = document.getElementById("navbar") as HTMLElement;
 let navContainer = document.querySelector(`#firstpage nav #navi`) as HTMLDivElement;
 let navTab = document.querySelector(`#firstpage nav #navi ul a`) as HTMLAnchorElement;
-var hiddenNavbar = document.getElementById("hidden_one") as HTMLElement;
+let hiddenNavbar = document.getElementById("hidden_one") as HTMLElement;
 let hoverNavBg = document.getElementById("hover") as HTMLSpanElement;
 let activeNavBg = document.getElementById("active") as HTMLSpanElement;
+
 var skillContainer = document.getElementById("skill_container") as HTMLElement;
 
 let navBarHoverIndex: number = 1;
-let skillArray:Skill[] = [
-    {skill: "HTML", percent: 65, offset: 105, width:10},
-    {skill: "HTML", percent: 30, offset: 210, width: 5},
-    {skill: "HTML", percent: 80, offset: 30, width:2},
+let skillArray: Skill[] = [
+    { skill: "Flutter", percent: 85, offset: 105 },
+    { skill: "Dart", percent: 75, offset: 105 },
+    { skill: "HTML", percent: 70, offset: 210 },
+    { skill: "Css", percent: 85, offset: 30 },
+    { skill: "Javascript", percent: 65, offset: 30 },
+    { skill: "Typescript", percent: 60, offset: 30 },
+    { skill: "React", percent: 40, offset: 30 },
+]
+let workArray: Works[] = [
+    { name: "Simon Game", description: "An inquisitive Computer Science Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.", skills: [{name: "HTML5"},{name: "CSS3"}, {name: "Java Script"},], githubLink: "" },
 ]
 
 window.addEventListener("load", () => {
@@ -41,14 +55,16 @@ window.addEventListener("load", () => {
               <span class="skillText">${skillArray[x].skill}</span>
             </div>
             `;
-            
-        let loading = document.getElementsByTagName(`circle`) as HTMLCollectionOf<SVGCircleElement>;
-        const keyFrames = document.createElement("style");
+    }
+    let loading = document.querySelectorAll(`circle`) as NodeListOf<SVGCircleElement>;
 
+    loading.forEach((circle, index) => {
+
+        const keyFrames = document.createElement("style");
         keyFrames.innerHTML = `
             @keyframes anim {
                 100% {
-                    stroke-dashoffset: ${skillArray[x].offset};
+                    stroke-dashoffset: ${skillArray[index].offset};
                 }
             }
 
@@ -56,8 +72,10 @@ window.addEventListener("load", () => {
                 animation: anim 2s linear forwards;
             }
         `;
-        loading[x].appendChild(keyFrames);
-    }
+        circle.appendChild(keyFrames)
+    });
+
+    workFunc(0);
 })
 
 window.addEventListener("scroll", () => {
@@ -79,6 +97,28 @@ window.addEventListener("scroll", () => {
         navContainer.style.boxShadow = "";
         navContainer.style.backdropFilter = "";
     }
+
+    // const sections = document.querySelectorAll("section");
+    // const navLi = document.querySelectorAll("#firstpage nav #navi ul a");
+    // let current: string = "";
+    // sections.forEach((section) => {
+    //     const sectionTop = section.offsetTop;
+    //     const sectionHeight = section.clientHeight;
+    //     if (scrollY >= sectionTop - sectionHeight / 3) {
+    //         current = section.getAttribute("id")!;
+    //     }
+    // });
+
+    // navLi.forEach((li, index) => {
+
+    // let selectedTab = document.querySelector(`#firstpage nav #navi ul :nth-child(${index+1})`) as HTMLAnchorElement
+
+    //     li.classList.remove("Navactive");
+    //     if (li.classList.contains(current)) {
+    //         li.classList.add("Navactive");
+    //     }
+
+    // });
 });
 
 function onHover(index: number) {
@@ -97,9 +137,10 @@ function onHover(index: number) {
     else if (index == 5) {
         hoverNavBg.style.left = "80.5%"
     }
+
     let hoverTab = document.querySelector(`#firstpage nav #navi ul :nth-child(${index})`) as HTMLAnchorElement
-    console.log(`${index} ${navBarHoverIndex}`)
-    if(navBarHoverIndex == index){
+
+    if (navBarHoverIndex == index) {
         console.log("Chee")
         hoverTab.style.color = "red"
     }
@@ -126,27 +167,41 @@ function onHoverOut(mouseHoverNumber?: number) {
 function onNavBarClick(index: number) {
     for (let x = 1; x <= 5; x++) {
         let ss = document.querySelector(`#firstpage nav #navi ul :nth-child(${x})`) as HTMLAnchorElement
-         ss.style.color = "beige"
-         ss.classList.remove("active")
-     }
+        ss.style.color = "beige"
+        ss.classList.remove("Navactive")
+    }
+
     let selectedTab = document.querySelector(`#firstpage nav #navi ul :nth-child(${index})`) as HTMLAnchorElement
     navBarHoverIndex = index;
+
     if (index == 1) {
+        let element = document.getElementById("firstpage") as HTMLElement;
+        element.scrollIntoView({ behavior: "smooth" })
+
         activeNavBg.style.left = "4%"
 
         selectedTab.style.color = "#F44336"
     }
     else if (index == 2) {
+        let element = document.getElementById("secondpage") as HTMLElement;
+    element.scrollIntoView({ behavior: "smooth" })
+
         activeNavBg.style.left = "23.5%"
-        
+
         selectedTab.style.color = "#F44336"
     }
     else if (index == 3) {
+        let element = document.getElementById("thirdpage") as HTMLElement;
+        element.scrollIntoView({ behavior: "smooth" })
+
         activeNavBg.style.left = "42.5%"
 
         selectedTab.style.color = "#F44336"
     }
     else if (index == 4) {
+        let element = document.getElementById("fourthpage") as HTMLElement;
+        element.scrollIntoView({ behavior: "smooth" })
+
         activeNavBg.style.left = "61.5%"
 
         selectedTab.style.color = "#F44336"
@@ -155,5 +210,20 @@ function onNavBarClick(index: number) {
         activeNavBg.style.left = "80.5%"
 
         selectedTab.style.color = "#F44336"
+    }
+}
+
+function workFunc(index:number){
+    let workName = document.getElementById("work-name") as HTMLHeadingElement
+    let workDescription = document.getElementById("work-description") as HTMLParagraphElement
+    let workSkillContainer = document.getElementById("work-skills_container") as HTMLParagraphElement
+
+    workName.textContent = workArray[index].name;
+    workDescription.textContent = workArray[index].description;
+    
+    for (let x = 0; x < workArray[index].skills.length; x++) {
+        let skill = workArray[index].skills[x].name;
+        workSkillContainer.innerHTML += `<div class="work-skills">${skill} </div>`
+        
     }
 }

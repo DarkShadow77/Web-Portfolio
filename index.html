@@ -14,16 +14,16 @@
 
 <body>
   <div class="body">
-    <div id="firstpage">
+    <sectiom id="firstpage">
       <nav id="navbar">
         <div id="navi">
           <ul id="nav">
-            <a onmouseover="onHover(1)" onmouseout="onHoverOut()" onclick="onNavBarClick(1)" class="active"
+            <a onmouseover="onHover(1)" onmouseout="onHoverOut()" onclick="onNavBarClick(1)" id="home" class="active"
               href="#home">Home</a>
-            <a onmouseover="onHover(2)" onmouseout="onHoverOut()" onclick="onNavBarClick(2)" href="#about">About</a>
-            <a onmouseover="onHover(3)" onmouseout="onHoverOut()" onclick="onNavBarClick(3)" href="#skill">Skills</a>
-            <a onmouseover="onHover(4)" onmouseout="onHoverOut()" onclick="onNavBarClick(4)" href="#works">Works</a>
-            <a onmouseover="onHover(5)" onmouseout="onHoverOut()" onclick="onNavBarClick(5)" href="#contact">Contact</a>
+            <a onmouseover="onHover(2)" onmouseout="onHoverOut()" onclick="onNavBarClick(2)" id="about" href="#about">About</a>
+            <a onmouseover="onHover(3)" onmouseout="onHoverOut()" onclick="onNavBarClick(3)" id="skill" href="#skill">Skills</a>
+            <a onmouseover="onHover(4)" onmouseout="onHoverOut()" onclick="onNavBarClick(4)" id="work" href="#works">Works</a>
+            <a onmouseover="onHover(5)" onmouseout="onHoverOut()" onclick="onNavBarClick(5)" id="contact" href="#contact">Contact</a>
           </ul>
           <span id="active"></span>
           <span id="hover"></span>
@@ -37,9 +37,9 @@
           <p id="role">Flutter Developer + Junior Front-end Developer</p>
         </div>
         <div id="socials">
-          <img class="icons" src="./assets/images/svg/twitter.svg">
-          <img class="icons" src="./assets/images/svg/github.svg">
-          <img class="icons" src="./assets/images/svg/linkedin.svg">
+          <a  href="https://github.com/DarkShadow77" target=”_blank><img class="icons" src="./assets/images/svg/twitter.svg"></a>
+          <a href="https://github.com/DarkShadow77" target=”_blank><img class="icons" src="./assets/images/svg/github.svg"></a>
+          <a href="https://www.linkedin.com/in/dadeshina4/" target=”_blank><img class="icons" src="./assets/images/svg/linkedin.svg"></a>
         </div>
 
       </div>
@@ -47,8 +47,9 @@
         <img src="./assets/images/svg/arrow_down.svg">
         <span>Scroll</span>
       </div>
-    </div>
-    <div id="secondpage">
+    </sectiom>
+
+    <sectiom id="secondpage" class="page">
       <div id="secondpage_content" class="page_content">
         <div id="image_container">
           <img src="./assets/images/png/image_bg.png" />
@@ -143,9 +144,9 @@
           </button>
         </div>
       </div>
-    </div>
+    </sectiom>
 
-    <div id="thirdpage">
+    <sectiom id="thirdpage" class="page">
       <div id="thirdpage_content" class="page_content">
         <div id="text_content">
           <h3>Skills</h3>
@@ -160,7 +161,25 @@
           <div id="image"></div>
         </div>
       </div>
-    </div>
+    </sectiom>
+
+    <sectiom id="fourthpage" class="page">
+      <div id="fourthpage_content" class="page_content">
+        <div id="image_container">
+          <img src="./assets/images/png/image_bg.png" />
+          <div id="image"></div>
+        </div>
+        <div id="text_content">
+          <h3>Works</h3>
+          <h4 id="work-name"></h4>
+          <p id="work-description"></p>
+          <div id="work-skills_container">
+            
+          </div>
+          <a href="https://github.com/DarkShadow77" target=”_blank><img class="icons" src="./assets/images/svg/github.svg"></a>
+        </div>
+      </div>
+    </sectiom>
   </div>
 </body>
 
