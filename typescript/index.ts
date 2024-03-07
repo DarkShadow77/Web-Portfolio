@@ -17,10 +17,13 @@ let navTab = document.querySelector(`#firstpage nav #navi ul a`) as HTMLAnchorEl
 let hiddenNavbar = document.getElementById("hidden_one") as HTMLElement;
 let hoverNavBg = document.getElementById("hover") as HTMLSpanElement;
 let activeNavBg = document.getElementById("active") as HTMLSpanElement;
+let previousWork = document.getElementById("backButton") as HTMLButtonElement;
+let nextWork = document.getElementById("nextButton") as HTMLButtonElement;
 
 var skillContainer = document.getElementById("skill_container") as HTMLElement;
 
 let navBarHoverIndex: number = 1;
+
 let skillArray: Skill[] = [
     { skill: "Flutter", percent: 85, offset: 105 },
     { skill: "Dart", percent: 75, offset: 105 },
@@ -30,11 +33,16 @@ let skillArray: Skill[] = [
     { skill: "Typescript", percent: 60, offset: 30 },
     { skill: "React", percent: 40, offset: 30 },
 ]
+
 let workArray: Works[] = [
-    { name: "Simon Game", description: "An inquisitive Computer Science Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.", skills: [{name: "HTML5"},{name: "CSS3"}, {name: "Java Script"},], githubLink: "" },
+    { name: "Simon Game", description: "An inquisitive Computer Science Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.", skills: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Java Script" },], githubLink: "" },
+    { name: "Simon Game", description: "An inquisitive Computering to leverage solid development skills with focus on collaboration, communication and passion.", skills: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Java Script" }, { name: "Flutter" },], githubLink: "" },
 ]
 
+let workIndex: number = 0;
+
 window.addEventListener("load", () => {
+    previousWork.style.display = "none";
     for (let x = 0; x < skillArray.length; x++) {
         skillContainer.innerHTML += `
             <div class="skill">
@@ -75,7 +83,7 @@ window.addEventListener("load", () => {
         circle.appendChild(keyFrames)
     });
 
-    workFunc(0);
+    workFunc(workIndex);
 })
 
 window.addEventListener("scroll", () => {
@@ -184,7 +192,7 @@ function onNavBarClick(index: number) {
     }
     else if (index == 2) {
         let element = document.getElementById("secondpage") as HTMLElement;
-    element.scrollIntoView({ behavior: "smooth" })
+        element.scrollIntoView({ behavior: "smooth" })
 
         activeNavBg.style.left = "23.5%"
 
@@ -207,23 +215,62 @@ function onNavBarClick(index: number) {
         selectedTab.style.color = "#F44336"
     }
     else if (index == 5) {
+        
+        let element = document.getElementById("fifthpage") as HTMLElement;
+        element.scrollIntoView({ behavior: "smooth" })
         activeNavBg.style.left = "80.5%"
 
         selectedTab.style.color = "#F44336"
     }
 }
 
-function workFunc(index:number){
+nextWork.addEventListener("click", () => {
+    workIndex++
+    if (workIndex == ((workArray.length) - 1)) {
+        nextWork.style.display = "none";
+    } else {
+        nextWork.style.display = "flex";
+    }
+    if (workIndex == 0) {
+        previousWork.style.display = "none";
+    }else{
+        previousWork.style.display = "flex";
+    }
+    if (workIndex < workArray.length) {
+        workFunc(workIndex);
+    }
+})
+
+
+previousWork.addEventListener("click", () => {
+    workIndex--
+    if (workIndex == ((workArray.length) - 1)) {
+        nextWork.style.display = "none";
+    } else {
+        nextWork.style.display = "flex";
+    }
+    if (workIndex == 0) {
+        previousWork.style.display = "none";
+    }else{
+        previousWork.style.display = "flex";
+    }
+    if (workIndex >= 0) {
+        workFunc(workIndex);
+    }
+})
+
+function workFunc(index: number) {
     let workName = document.getElementById("work-name") as HTMLHeadingElement
     let workDescription = document.getElementById("work-description") as HTMLParagraphElement
     let workSkillContainer = document.getElementById("work-skills_container") as HTMLParagraphElement
 
     workName.textContent = workArray[index].name;
     workDescription.textContent = workArray[index].description;
-    
+    workSkillContainer.innerHTML = "";
+
     for (let x = 0; x < workArray[index].skills.length; x++) {
         let skill = workArray[index].skills[x].name;
         workSkillContainer.innerHTML += `<div class="work-skills">${skill} </div>`
-        
+
     }
 }

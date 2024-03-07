@@ -5,6 +5,8 @@ let navTab = document.querySelector(`#firstpage nav #navi ul a`);
 let hiddenNavbar = document.getElementById("hidden_one");
 let hoverNavBg = document.getElementById("hover");
 let activeNavBg = document.getElementById("active");
+let previousWork = document.getElementById("backButton");
+let nextWork = document.getElementById("nextButton");
 var skillContainer = document.getElementById("skill_container");
 let navBarHoverIndex = 1;
 let skillArray = [
@@ -18,8 +20,11 @@ let skillArray = [
 ];
 let workArray = [
     { name: "Simon Game", description: "An inquisitive Computer Science Engineering student, skilled in leadership, seeking to leverage solid development skills with focus on collaboration, communication and passion.", skills: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Java Script" },], githubLink: "" },
+    { name: "Simon Game", description: "An inquisitive Computering to leverage solid development skills with focus on collaboration, communication and passion.", skills: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Java Script" }, { name: "Flutter" },], githubLink: "" },
 ];
+let workIndex = 0;
 window.addEventListener("load", () => {
+    previousWork.style.display = "none";
     for (let x = 0; x < skillArray.length; x++) {
         skillContainer.innerHTML += `
             <div class="skill">
@@ -57,7 +62,7 @@ window.addEventListener("load", () => {
         `;
         circle.appendChild(keyFrames);
     });
-    workFunc(0);
+    workFunc(workIndex);
 });
 window.addEventListener("scroll", () => {
     if (document.documentElement.scrollTop > 50) {
@@ -169,16 +174,55 @@ function onNavBarClick(index) {
         selectedTab.style.color = "#F44336";
     }
     else if (index == 5) {
+        let element = document.getElementById("fifthpage");
+        element.scrollIntoView({ behavior: "smooth" });
         activeNavBg.style.left = "80.5%";
         selectedTab.style.color = "#F44336";
     }
 }
+nextWork.addEventListener("click", () => {
+    workIndex++;
+    if (workIndex == ((workArray.length) - 1)) {
+        nextWork.style.display = "none";
+    }
+    else {
+        nextWork.style.display = "flex";
+    }
+    if (workIndex == 0) {
+        previousWork.style.display = "none";
+    }
+    else {
+        previousWork.style.display = "flex";
+    }
+    if (workIndex < workArray.length) {
+        workFunc(workIndex);
+    }
+});
+previousWork.addEventListener("click", () => {
+    workIndex--;
+    if (workIndex == ((workArray.length) - 1)) {
+        nextWork.style.display = "none";
+    }
+    else {
+        nextWork.style.display = "flex";
+    }
+    if (workIndex == 0) {
+        previousWork.style.display = "none";
+    }
+    else {
+        previousWork.style.display = "flex";
+    }
+    if (workIndex >= 0) {
+        workFunc(workIndex);
+    }
+});
 function workFunc(index) {
     let workName = document.getElementById("work-name");
     let workDescription = document.getElementById("work-description");
     let workSkillContainer = document.getElementById("work-skills_container");
     workName.textContent = workArray[index].name;
     workDescription.textContent = workArray[index].description;
+    workSkillContainer.innerHTML = "";
     for (let x = 0; x < workArray[index].skills.length; x++) {
         let skill = workArray[index].skills[x].name;
         workSkillContainer.innerHTML += `<div class="work-skills">${skill} </div>`;

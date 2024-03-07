@@ -9,6 +9,7 @@ body {
     height: 400vh;
 
     background: url("./images/svg/bg.svg")no-repeat center center;
+    background-size: cover;
 }
 
 #firstpage {
@@ -169,7 +170,7 @@ body {
     }
 
     to {
-        transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -20px, 0);
     }
 }
 
@@ -189,7 +190,7 @@ body {
     align-items: center;
 }
 
-#secondpage #secondpage_content #image_container {
+.page_content #image_container {
     position: relative;
     width: 40%;
     height: 688px;
@@ -197,25 +198,33 @@ body {
     padding: 5px;
 }
 
-#secondpage #secondpage_content #image_container img {
+.page_content #image_container #bgImage {
     position: absolute;
-    left: 0px;
     top: 0px;
     width: 152px;
     height: 192px;
 }
 
-#secondpage #secondpage_content #image_container #image {
-    height: 640px;
-    margin-left: 50px;
-    margin-top: 35px;
-    filter: grayscale(3);
-    background: url("./images/jpg/profileImage.jpg") no-repeat center center;
-    background-size: cover;
-    border-radius: 10px;
+#secondpage #secondpage_content #image_container #bgImage{
+    left: 0px;
 }
 
-#secondpage #secondpage_content #text_content {
+.page_content #image_container #image {
+    height: 650px;
+    margin-top: 35px;
+    overflow: hidden;
+    filter: grayscale(3);
+    position: relative;
+    border-radius: 20px;
+}
+
+#secondpage #secondpage_content #image_container #image {
+    margin-left: 50px;
+    background: url("./images/jpg/profileImage.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.page_content #text_content {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -245,7 +254,7 @@ body {
     margin: 0px;
 }
 
-button {
+#downloadCV {
     position: relative;
     width: 170px;
     height: 53px;
@@ -332,13 +341,13 @@ button {
     transition: all 0.8s ease;
 }
 
-button:hover {
+#downloadCV:hover {
     background-color: transparent;
     color: #000C24;
     box-shadow: 0 0 25px #fec1958c;
 }
 
-button:hover .star-1 {
+#downloadCV:hover .star-1 {
     position: absolute;
     top: -80%;
     left: -30%;
@@ -348,7 +357,7 @@ button:hover .star-1 {
     z-index: 2;
 }
 
-button:hover .star-2 {
+#downloadCV:hover .star-2 {
     position: absolute;
     top: -25%;
     left: 10%;
@@ -358,7 +367,7 @@ button:hover .star-2 {
     z-index: 2;
 }
 
-button:hover .star-3 {
+#downloadCV:hover .star-3 {
     position: absolute;
     top: 55%;
     left: 25%;
@@ -368,7 +377,7 @@ button:hover .star-3 {
     z-index: 2;
 }
 
-button:hover .star-4 {
+#downloadCV:hover .star-4 {
     position: absolute;
     top: 30%;
     left: 80%;
@@ -378,7 +387,7 @@ button:hover .star-4 {
     z-index: 2;
 }
 
-button:hover .star-5 {
+#downloadCV:hover .star-5 {
     position: absolute;
     top: 25%;
     left: 115%;
@@ -388,7 +397,7 @@ button:hover .star-5 {
     z-index: 2;
 }
 
-button:hover .star-6 {
+#downloadCV:hover .star-6 {
     position: absolute;
     top: 5%;
     left: 60%;
@@ -402,37 +411,15 @@ button:hover .star-6 {
     fill: #000C24;
 }
 
-#thirdpage #thirdpage_content #image_container {
-    position: relative;
-    width: 40%;
-    height: 688px;
-    overflow: hidden;
-    padding: 5px;
-}
-
-#thirdpage #thirdpage_content #image_container img {
-    position: absolute;
+#thirdpage #thirdpage_content #image_container #bgImage {
     right: 0px;
-    top: 0px;
-    width: 152px;
-    height: 192px;
 }
 
 #thirdpage #thirdpage_content #image_container #image {
-    height: 640px;
+    
     margin-right: 50px;
-    margin-top: 35px;
-    filter: grayscale(3);
     background: url("./images/png/skill.png") no-repeat center center;
-    background-size: contain;
-    border-radius: 10px;
-}
-
-#thirdpage #thirdpage_content #text_content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 56px 56px;
+    background-size: cover;
 }
 
 #thirdpage #thirdpage_content #text_content #skill_container {
@@ -508,39 +495,45 @@ svg {
     left: 0;
 }
 
-#fourthpage #fourthpage_content #image_container {
-    position: relative;
-    width: 40%;
-    height: 688px;
-    overflow: hidden;
-    padding: 5px;
+#fourthpage #fourthpage_content #image_container #bgImage{
+    left: 0px;
 }
 
-#fourthpage #fourthpage_content #image_container img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 152px;
-    height: 192px;
+#fourthpage #fourthpage_content #image_container button{
+    width: 100px;
+    height: 64px;
+    background-color: #928A97;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+#fourthpage #fourthpage_content #image_container button:hover{
+    cursor: pointer;
+    background-color: rgba(146, 138, 151, .5);
+}
+
+#backButton{
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+#nextButton{
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
 }
 
 #fourthpage #fourthpage_content #image_container #image {
-    height: 640px;
     margin-left: 50px;
-    margin-top: 35px;
-    filter: grayscale(3);
-    background: url("./images/jpg/profileImage.jpg") no-repeat center center;
+    background: url("./images/png/skill.png") no-repeat center center;
     background-size: cover;
-    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#fourthpage #fourthpage_content #text_content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 56px 56px;
-    justify-content: space-around;
-}
 
 #fourthpage #fourthpage_content #text_content h4 {
     color: #F44336;
@@ -580,4 +573,25 @@ svg {
     width: 36px;
     height: 36px;
     margin: 24px 0px;
+}
+
+#fifthpage{
+    background: url("./images/svg/contact-bg.svg") no-repeat center center;
+    background-size: cover;
+    flex-direction: column;
+    padding: 0px;
+}
+#fifthpage #contact{
+    width: 100%;
+}
+#fifthpage #contact #contact_content{
+    height: 486px;
+    border-radius: 4px;
+    margin: 72px 80px;
+    background-color: white;
+}
+#fifthpage footer{
+    flex-grow: 1;
+    width: 100%;
+    background-color: #000C24;
 }
