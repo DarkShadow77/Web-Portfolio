@@ -45,31 +45,42 @@ window.addEventListener("load", () => {
               <span class="skillText">${skillArray[x].skill}</span>
             </div>
             `;
-    }
-    let loading = document.querySelectorAll(`circle`);
-    loading.forEach((circle, index) => {
+        let loading = document.querySelectorAll(`circle`);
         const keyFrames = document.createElement("style");
         keyFrames.innerHTML = `
-            @keyframes anim {
-                100% {
-                    stroke-dashoffset: ${skillArray[index].offset};
+                @keyframes anim {
+                    100% {
+                        stroke-dashoffset: ${skillArray[2].offset};
+                    }
                 }
-            }
-
-            circle {
-                animation: anim 2s linear forwards;
-            }
-        `;
-        circle.appendChild(keyFrames);
-    });
+        
+                circle {
+                    animation: anim 2s linear forwards;
+                }
+            `;
+        loading[x].appendChild(keyFrames);
+    }
+    // let loadings = document.querySelectorAll(`circle`) as NodeListOf<SVGCircleElement>
+    // loading.forEach((circle, index) => {
+    //     const keyFrames = document.createElement("style");
+    //     keyFrames.innerHTML = `
+    //     @keyframes anim {
+    //         100% {
+    //             stroke-dashoffset: ${skillArray[1].offset};
+    //         }
+    //     }
+    //     circle {
+    //         animation: anim 2s linear forwards;
+    //     }
+    // `;
+    //     circle.appendChild(keyFrames)
+    // });
     workFunc(workIndex);
 });
 window.addEventListener("scroll", () => {
     if (document.documentElement.scrollTop > 50) {
         navbar.classList.add("sticky");
         hiddenNavbar.style.display = "flex";
-        hiddenNavbar.style.width = "45%";
-        hiddenNavbar.style.padding = "20px";
         navContainer.style.background = "rgba(0, 12, 36, 0.3)";
         navContainer.style.margin = "20px 0px";
         navContainer.style.borderRadius = "40px";

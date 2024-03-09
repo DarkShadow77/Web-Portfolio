@@ -63,35 +63,51 @@ window.addEventListener("load", () => {
               <span class="skillText">${skillArray[x].skill}</span>
             </div>
             `;
-    }
-    let loading = document.querySelectorAll(`circle`) as NodeListOf<SVGCircleElement>;
 
-    loading.forEach((circle, index) => {
+        let loading = document.querySelectorAll(`circle`) as NodeListOf<SVGCircleElement>;
+
 
         const keyFrames = document.createElement("style");
         keyFrames.innerHTML = `
-            @keyframes anim {
-                100% {
-                    stroke-dashoffset: ${skillArray[index].offset};
+                @keyframes anim {
+                    100% {
+                        stroke-dashoffset: ${skillArray[2].offset};
+                    }
                 }
-            }
+        
+                circle {
+                    animation: anim 2s linear forwards;
+                }
+            `;
 
-            circle {
-                animation: anim 2s linear forwards;
-            }
-        `;
-        circle.appendChild(keyFrames)
-    });
+        loading[x].appendChild(keyFrames);
+
+    }
+    // let loadings = document.querySelectorAll(`circle`) as NodeListOf<SVGCircleElement>
+    // loading.forEach((circle, index) => {
+
+    //     const keyFrames = document.createElement("style");
+    //     keyFrames.innerHTML = `
+    //     @keyframes anim {
+    //         100% {
+    //             stroke-dashoffset: ${skillArray[1].offset};
+    //         }
+    //     }
+
+    //     circle {
+    //         animation: anim 2s linear forwards;
+    //     }
+    // `;
+    //     circle.appendChild(keyFrames)
+    // });
 
     workFunc(workIndex);
-})
+});
 
 window.addEventListener("scroll", () => {
     if (document.documentElement.scrollTop > 50) {
         navbar.classList.add("sticky");
         hiddenNavbar.style.display = "flex";
-        hiddenNavbar.style.width = "45%";
-        hiddenNavbar.style.padding = "20px";
         navContainer.style.background = "rgba(0, 12, 36, 0.3)";
         navContainer.style.margin = "20px 0px";
         navContainer.style.borderRadius = "40px";
@@ -215,7 +231,7 @@ function onNavBarClick(index: number) {
         selectedTab.style.color = "#F44336"
     }
     else if (index == 5) {
-        
+
         let element = document.getElementById("fifthpage") as HTMLElement;
         element.scrollIntoView({ behavior: "smooth" })
         activeNavBg.style.left = "80.5%"
@@ -233,7 +249,7 @@ nextWork.addEventListener("click", () => {
     }
     if (workIndex == 0) {
         previousWork.style.display = "none";
-    }else{
+    } else {
         previousWork.style.display = "flex";
     }
     if (workIndex < workArray.length) {
@@ -251,7 +267,7 @@ previousWork.addEventListener("click", () => {
     }
     if (workIndex == 0) {
         previousWork.style.display = "none";
-    }else{
+    } else {
         previousWork.style.display = "flex";
     }
     if (workIndex >= 0) {
