@@ -14,20 +14,20 @@
 
 <body>
   <div class="body">
-    <sectiom id="firstpage">
+    <section id="firstpage" class="page">
       <nav id="navbar">
         <div id="navi">
           <ul id="nav">
-            <a onmouseover="onHover(1)" onmouseout="onHoverOut()" onclick="onNavBarClick(1)" id="home" class="active"
-              href="#home">Home</a>
+            <a onmouseover="onHover(1)" onmouseout="onHoverOut()" onclick="onNavBarClick(1)" id="home"
+              class="firstpage active" href="#home">Home</a>
             <a onmouseover="onHover(2)" onmouseout="onHoverOut()" onclick="onNavBarClick(2)" id="about"
-              href="#about">About</a>
+              class="secondpage" href="#about">About</a>
             <a onmouseover="onHover(3)" onmouseout="onHoverOut()" onclick="onNavBarClick(3)" id="skill"
-              href="#skill">Skills</a>
+              class="thirdpage" href="#skill">Skills</a>
             <a onmouseover="onHover(4)" onmouseout="onHoverOut()" onclick="onNavBarClick(4)" id="work"
-              href="#works">Works</a>
+              class="fourthpage" href="#works">Works</a>
             <a onmouseover="onHover(5)" onmouseout="onHoverOut()" onclick="onNavBarClick(5)" id="contact"
-              href="#contact">Contact</a>
+              class="fifthpage" href="#contact">Contact</a>
           </ul>
           <span id="active"></span>
           <span id="hover"></span>
@@ -38,7 +38,7 @@
       <div id="firstpage_content">
         <div id="name_role">
           <h2 id="name">David <span>Adeshina</span></h2>
-          <p id="role">Flutter Developer + Junior Front-end Developer</p>
+          <p id="role">Flutter Developer + Front-end Developer</p>
         </div>
         <div id="socials">
           <a href="https://github.com/DarkShadow77" target=”_blank><img class="icons"
@@ -54,12 +54,12 @@
         <img src="./assets/images/svg/arrow_down.svg">
         <span>Scroll</span>
       </div>
-    </sectiom>
+    </section>
 
-    <sectiom id="secondpage" class="page">
+    <section id="secondpage" class="page">
       <div id="secondpage_content" class="page_content">
         <div id="image_container">
-          <img id="bgImage"  src="./assets/images/png/image_bg.png" />
+          <img id="bgImage" src="./assets/images/png/image_bg.png" />
           <div id="image"></div>
         </div>
         <div id="text_content">
@@ -68,92 +68,95 @@
             securityunderstanding to build secure and engaging mobile applications or web applications. Skilled in UI/UX
             design andadept at collaborating with cross-functional teams. Eager to learn and contribute to innovative
             projects.</p>
-          <button id="downloadCV">
-            Download CV
-            <div class="star-1">
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs></defs>
-                <g id="Layer_x0020_1">
-                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                  <path class="fil0"
-                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                  </path>
-                </g>
-              </svg>
-            </div>
-            <div class="star-2">
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs></defs>
-                <g id="Layer_x0020_1">
-                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                  <path class="fil0"
-                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                  </path>
-                </g>
-              </svg>
-            </div>
-            <div class="star-3">
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs></defs>
-                <g id="Layer_x0020_1">
-                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                  <path class="fil0"
-                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                  </path>
-                </g>
-              </svg>
-            </div>
-            <div class="star-4">
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs></defs>
-                <g id="Layer_x0020_1">
-                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                  <path class="fil0"
-                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                  </path>
-                </g>
-              </svg>
-            </div>
-            <div class="star-5">
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs></defs>
-                <g id="Layer_x0020_1">
-                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                  <path class="fil0"
-                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                  </path>
-                </g>
-              </svg>
-            </div>
-            <div class="star-6">
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs></defs>
-                <g id="Layer_x0020_1">
-                  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                  <path class="fil0"
-                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                  </path>
-                </g>
-              </svg>
-            </div>
-          </button>
+
+          <a download target="_blank" href="./assets\pdf\David Adeshina Resume.pdf">
+            <button id="downloadCV">
+              Download CV
+              <div class="star-1">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                  viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path class="fil0"
+                      d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </a>
         </div>
       </div>
-    </sectiom>
+    </section>
 
-    <sectiom id="thirdpage" class="page">
+    <section id="thirdpage" class="page">
       <div id="thirdpage_content" class="page_content">
         <div id="text_content">
           <h3>Skills</h3>
@@ -164,13 +167,13 @@
           </div>
         </div>
         <div id="image_container">
-          <img id="bgImage"  src="./assets/images/png/image_bg.png" />
+          <img id="bgImage" src="./assets/images/png/image_bg.png" />
           <div id="image"></div>
         </div>
       </div>
-    </sectiom>
+    </section>
 
-    <sectiom id="fourthpage" class="page">
+    <section id="fourthpage" class="page">
       <div id="fourthpage_content" class="page_content">
         <div id="image_container">
           <img id="bgImage" src="./assets/images/png/image_bg.png" />
@@ -193,18 +196,84 @@
           <div id="work-skills_container">
 
           </div>
-          <a href="https://github.com/DarkShadow77" target=”_blank><img class="icons"
-              src="./assets/images/svg/github.svg"></a>
+          <a href="https://github.com/DarkShadow77" target=”_blank>
+            <img class="icons" src="./assets/images/svg/github.svg">
+          </a>
+
+          <h1 id="work_index">01</h1>
+          <div id="indicator_container">
+
+          </div>
         </div>
       </div>
-    </sectiom>
-    
-    <sectiom id="fifthpage" class="page">
+    </section>
+
+    <section id="fifthpage" class="page">
       <div id="contact">
-        <div id="contact_content"></div>
+        <div id="contact_content">
+          <div id="form_input">
+            <div>
+              <div class="form-control">
+              <input name="name" type="value" required="">
+              <label>
+                <span style="transition-delay:0ms">Y</span><span style="transition-delay:50ms">o</span><span
+                  style="transition-delay:100ms">u</span><span style="transition-delay:150ms">r</span><span>
+                </span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span
+                  style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
+              </label>
+            </div>
+            <div class="form-control">
+              <input name="email" type="email" required="">
+              <label>
+                <span style="transition-delay:0ms">Y</span><span style="transition-delay:50ms">o</span><span
+                  style="transition-delay:100ms">u</span><span style="transition-delay:150ms">r</span> <span>
+                </span><span style="transition-delay:200ms">e</span><span style="transition-delay:250ms">m</span><span
+                  style="transition-delay:300ms">a</span><span style="transition-delay:350ms">i</span><span
+                  style="transition-delay:400ms">l</span>
+              </label>
+            </div>
+            <div class="form-control">
+              <input name="name" type="value" required="">
+              <label>
+                <span style="transition-delay:0ms">M</span><span style="transition-delay:50ms">e</span><span
+                  style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span
+                  style="transition-delay:200ms">a</span><span style="transition-delay:250ms">g</span><span
+                  style="transition-delay:300ms">e</span>
+              </label>
+            </div>
+            <button>
+              <span> Send </span>
+            </button>
+            </div>
+            
+          </div>
+          <div id="text_content">
+            <div id="loader">
+                <h4 data-glitch="Get In    " class="glitch">Get In</h4>
+                <h4 data-glitch="Touch" class="glitch">Touch</h4>
+            </div>
+          </div>
+
+
+        </div>
       </div>
-      <footer></footer>
-    </sectiom>
+      <footer>
+        <h2>David Adeshina</h2>
+        <div id="socials">
+          <a href="https://github.com/DarkShadow77" target=”_blank><img class="icons"
+              src="./assets/images/svg/twitter.svg"></a>
+          <a href="https://github.com/DarkShadow77" target=”_blank><img class="icons"
+              src="./assets/images/svg/github.svg"></a>
+          <a href="https://www.linkedin.com/in/dadeshina4/" target=”_blank><img class="icons"
+              src="./assets/images/svg/linkedin.svg"></a>
+        </div>
+        <p>
+          All Rights Reserved
+          <span><img src="./assets/images/svg/copyright.svg"></span>
+          David Adeshina
+        </p>
+      </footer>
+    </section>
   </div>
 </body>
 

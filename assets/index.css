@@ -8,7 +8,6 @@ body {
 
 .body {
     height: 400vh;
-
     background: url("./images/svg/bg.svg")no-repeat center center;
     background-size: cover;
 }
@@ -100,11 +99,12 @@ body {
 
 #firstpage nav #navi ul .active {
     color: #F44336;
+    font-weight: 600;
 }
 
 #firstpage nav #navi #hover {
     position: absolute;
-    left: 5.5%;
+    left: 4.5%;
     height: 112px;
     width: 20%;
     background: url("./images/svg/hover.svg") center no-repeat;
@@ -119,11 +119,11 @@ body {
     background: url("./images/svg/hover.svg") center no-repeat;
     background-size: contain;
     width: 20%;
-    left: 4%;
+    left: 3%;
     transition: .5s ease-in-out;
 }
 
-#hidden_one{
+#hidden_one {
     display: none;
     width: 45%;
     padding: 20px;
@@ -208,6 +208,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    column-gap: 56px;
 }
 
 .page_content #image_container {
@@ -225,7 +226,7 @@ body {
     height: 192px;
 }
 
-#secondpage #secondpage_content #image_container #bgImage{
+#secondpage #secondpage_content #image_container #bgImage {
     left: 0px;
 }
 
@@ -236,6 +237,11 @@ body {
     filter: grayscale(3);
     position: relative;
     border-radius: 20px;
+    transition: .4s filter ease-in-out;
+}
+
+.page_content #image_container #image:hover {
+    filter: grayscale(0);
 }
 
 #secondpage #secondpage_content #image_container #image {
@@ -248,7 +254,6 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 56px 56px;
 }
 
 .page_content #text_content h3 {
@@ -436,22 +441,28 @@ body {
 }
 
 #thirdpage #thirdpage_content #image_container #image {
-    
+
     margin-right: 50px;
     background: url("./images/png/skill.png") no-repeat center center;
-    background-size: cover;
+    background-position: right;
+    background-size: contain;
+}
+
+#thirdpage #thirdpage_content #text_content {
+    margin-left: 50px;
 }
 
 #thirdpage #thirdpage_content #text_content #skill_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 48px;
+    column-gap: 25px;
+    row-gap: 25px;
 }
 
 #thirdpage #thirdpage_content #text_content #skill_container .skill {
     position: relative;
-    margin: 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -507,6 +518,7 @@ circle {
     height: 100px;
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
+    animation: anim 2s linear forwards;
 }
 
 svg {
@@ -515,11 +527,18 @@ svg {
     left: 0;
 }
 
-#fourthpage #fourthpage_content #image_container #bgImage{
+@keyframes anim {
+    100% {
+        stroke-dashoffset: var(--m);
+        /* stroke: var(--m); */
+    }
+}
+
+#fourthpage #fourthpage_content #image_container #bgImage {
     left: 0px;
 }
 
-#fourthpage #fourthpage_content #image_container button{
+#fourthpage #fourthpage_content #image_container button {
     width: 100px;
     height: 64px;
     background-color: #928A97;
@@ -527,44 +546,50 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .5s ease-in-out;
+    transition: .5s background-color ease-in-out, .5s display ease-in-out;
 }
 
-#fourthpage #fourthpage_content #image_container button:hover{
+#fourthpage #fourthpage_content #image_container button:hover {
     cursor: pointer;
     background-color: rgba(146, 138, 151, .5);
 }
 
-#backButton{
+#backButton {
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;
 }
 
-#nextButton{
+#nextButton {
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
 }
 
 #fourthpage #fourthpage_content #image_container #image {
     margin-left: 50px;
-    background: url("./images/png/skill.png") no-repeat center center;
+    background: url("./images/png/skill.png") no-repeat right center;
     background-size: cover;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+#fourthpage #fourthpage_content #text_content {
+    padding-right: 100px;
+    box-sizing: border-box;
+}
 
-#fourthpage #fourthpage_content #text_content h4 {
+
+#fourthpage #fourthpage_content #text_content #work-name {
     color: #F44336;
     font-size: 24px;
     font-weight: 600;
     word-wrap: break-word;
     margin: 0px;
     padding: 0px;
+    transition: .4s all ease-in-out forwards;
 }
 
-#fourthpage #fourthpage_content #text_content p{
+#fourthpage #fourthpage_content #text_content p {
     margin: 24px 0px;
 }
 
@@ -572,6 +597,8 @@ svg {
     display: flex;
     flex-wrap: wrap;
     margin: 24px 0px;
+    column-gap: 15px;
+    row-gap: 15px;
 }
 
 #fourthpage #fourthpage_content #text_content #work-skills_container .work-skills {
@@ -579,7 +606,6 @@ svg {
     background-color: #928A97;
     border-radius: 6px;
     padding: 8px 12px;
-    margin-right: 16px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -589,29 +615,311 @@ svg {
     font-weight: 500;
     line-height: 23.80px;
 }
-#fourthpage #fourthpage_content #text_content a{
+
+#fourthpage #fourthpage_content #text_content a {
     width: 36px;
     height: 36px;
     margin: 24px 0px;
 }
 
-#fifthpage{
-    background: url("./images/svg/contact-bg.svg") no-repeat center center;
-    background-size: cover;
+#fourthpage #fourthpage_content #text_content #indicator_container {
+    width: 100%;
+    height: 5px;
+    display: flex;
+    column-gap: 5px
+}
+
+#fourthpage #fourthpage_content #text_content #work_index {
+    margin: 0px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    color: #000C24;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#fourthpage #fourthpage_content #text_content #indicator_container #active {
+    background-color: #000C24;
+    transition: .5s background-color ease-in-out;
+}
+
+#fourthpage #fourthpage_content #text_content #indicator_container .indicator {
+    flex-grow: 1;
+    height: 100%;
+    background-color: #928A97;
+    border-radius: 10px;
+    transition: .5s background-color ease-in-out;
+
+}
+
+#fifthpage {
+    background-color: #000C24;
     flex-direction: column;
     padding: 0px;
 }
-#fifthpage #contact{
+
+#fifthpage #contact {
     width: 100%;
 }
-#fifthpage #contact #contact_content{
+
+#fifthpage #contact #contact_content {
     height: 486px;
     border-radius: 4px;
     margin: 72px 80px;
-    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
 }
-#fifthpage footer{
+
+
+#fifthpage #contact #contact_content #form_input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#fifthpage #contact #contact_content #form_input .form-control {
+    position: relative;
+    margin: 0px 0 40px;
+    width: 500px;
+}
+
+#fifthpage #contact #contact_content #form_input .form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+#fifthpage #contact #contact_content #form_input .form-control input:focus,
+#fifthpage #contact #contact_content #form_input .form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+#fifthpage #contact #contact_content #form_input .form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+#fifthpage #contact #contact_content #form_input .form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    color: #fff;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#fifthpage #contact #contact_content #form_input .form-control input:focus+label span,
+#fifthpage #contact #contact_content #form_input .form-control input:valid+label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+
+#fifthpage #contact #contact_content #form_input button {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #000C24;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+    justify-self: start;
+    align-self: start;
+    margin-top: 30px;
+}
+
+#fifthpage #contact #contact_content #form_input button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #000C24;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+#fifthpage #contact #contact_content #form_input button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+#fifthpage #contact #contact_content #form_input button span:not(hover) {
+    transition: all 1s;
+}
+
+#fifthpage #contact #contact_content #text_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    padding-right: 100px;
+}
+
+#fifthpage #contact #contact_content #text_content #loader {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#fifthpage #contact #contact_content #text_content #loader .glitch {
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: beige;
+    letter-spacing: 5px;
+    z-index: 1;
+    animation: shift 1s ease-in-out normal alternate;
+    margin: 0px;
+}
+
+#fifthpage #contact #contact_content #text_content #loader .glitch:nth-child(1) {
+    font-size: 100px;
+}
+
+#fifthpage #contact #contact_content #text_content #loader .glitch:before,
+#fifthpage #contact #contact_content #text_content #loader .glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+#fifthpage #contact #contact_content #text_content #loader .glitch:before {
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #928A97;
+    z-index: -1;
+}
+
+#fifthpage #contact #contact_content #text_content #loader .glitch:after {
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: lightblue;
+    z-index: -2;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-3px, 3px);
+    }
+
+    40% {
+        transform: translate(-3px, -3px);
+    }
+
+    60% {
+        transform: translate(3px, 3px);
+    }
+
+    80% {
+        transform: translate(3px, -3px);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+@keyframes shift {
+
+    0%,
+    40%,
+    44%,
+    58%,
+    61%,
+    65%,
+    69%,
+    73%,
+    100% {
+        transform: skewX(0deg);
+    }
+
+    41% {
+        transform: skewX(10deg);
+    }
+
+    42% {
+        transform: skewX(-10deg);
+    }
+
+    59% {
+        transform: skewX(40deg) skewY(10deg);
+    }
+
+    60% {
+        transform: skewX(-40deg) skewY(-10deg);
+    }
+
+    63% {
+        transform: skewX(10deg) skewY(-5deg);
+    }
+
+    70% {
+        transform: skewX(-50deg) skewY(-20deg);
+    }
+
+    71% {
+        transform: skewX(10deg) skewY(-10deg);
+    }
+}
+
+
+#fifthpage footer {
     flex-grow: 1;
     width: 100%;
-    background-color: #000C24;
+    background: url("./images/svg/footer_bg.svg") no-repeat center center;
+    background-position: right;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    row-gap: 30px;
+}
+
+#fifthpage footer h2 {
+    margin: 0px;
+    font-size: 18px;
+}
+
+#fifthpage footer p {
+    margin: 0px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+#fifthpage footer p img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin: 0px 5px;
 }
